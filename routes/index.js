@@ -12,19 +12,32 @@ router.get('/stuff', function(req, res, next) {
 });
 
 router.get('/about', function(req, res, next){
-    res.render('about', {name: "ME!"})
+    res.render('about', {
+        name: "Richard Nguyen",
+        description: "Converts multiple currencies"});
 });
 
 router.get('/convert', function(req, res, next){
 
 
-    var dollars =req.query.dollars;
+    var amount =req.query.amount;
+    var fromCurrency = req.query.from_currency;
     var toCurrency = req.query.to_currency;
+    var converted;
+    var convertKey = fromCurrency + "to" + toCurrency;
 
-    var converted = dollars * exchangeRates[toCurrency];
+    if(fromCurrency === toCurrency){
+        converted = amount;
+    }
+    else{
+        converted = amount * exchangeRates[convertKey]
+    }
+
+
 
     res.render('results', {
-        dollars: dollars,
+        amount: amount,
+        fromCurrency: fromCurrency,
         toCurrency: toCurrency,
         converted: converted});
 });
