@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="bin\www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="$PROJECT_DIR$/../currency/bin/www" working-dir="$PROJECT_DIR$/../currency">
+  <configuration default="false" name="bin\www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$">
     <envs>
       <env name="DEBUG" value="untitled:*" />
+      <env name="FIXER_API_KEY" value="1e2a519987b913d1906e036f8173cb05" />
     </envs>
-    <browser url="http://localhost:3000/" />
     <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
       <browser url="http://localhost:3000/" />
     </EXTENSION>
