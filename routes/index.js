@@ -48,10 +48,9 @@ router.get('/convert', function(req, res, next){
             }
             else{
                 // use euro as a middle man to go from USD to JPY and the otherway around
-                convertRate = fixerdata.rates[fromCurrency];
-                var toEURO = amount / convertRate;
-                convertRate = fixerdata.rates[toCurrency];
-                convertedAmount = toEURO * convertRate;
+                var toEURO = amount / fixerdata.rates[fromCurrency];
+
+                convertedAmount = toEURO * fixerdata.rates[toCurrency];
             }
 
             //converted = fixerdata.rates[0];
